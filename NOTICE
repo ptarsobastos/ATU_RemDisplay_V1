@@ -1,0 +1,38 @@
+ATU_RemDisplay_V1 - Third-Party Notices / Attribution
+
+This project may include ideas, interfaces, protocol behavior analysis, or
+derived implementation details from external/public sources.
+
+Update this file before public release.
+
+1) ATU100 / N7DDC ecosystem
+- Reference: N7DDC ATU100 firmware/project materials.
+- Usage in this repository: OLED/I2C behavior study and compatibility work.
+- Action required before release:
+  - Verify the original license terms.
+  - Add exact source links and copyright notices.
+  - Confirm whether derivative source redistribution is permitted.
+
+2) ESP-IDF (Espressif)
+- Website: https://github.com/espressif/esp-idf
+- License: Apache-2.0
+- Usage: firmware framework and components.
+
+3) Product-inspired visual design
+- UI look/feel is inspired by publicly visible ATU enclosure/front panel photos.
+- Action required before release:
+  - Prefer original screenshots/photos made by this project owner.
+  - Avoid bundling third-party marketplace images unless license permits.
+  - If external images are included, add explicit attribution and license terms.
+
+4) Fonts / icons / media
+- Current web UI uses system fonts and local project favicon.
+- Action required before release:
+  - If adding external fonts/icons/media, document source + license here.
+
+Release checklist:
+- [ ] LICENSE file added at repo root
+- [ ] Third-party licenses verified
+- [ ] All required attributions listed
+- [ ] No proprietary/unlicensed binaries/assets included
+

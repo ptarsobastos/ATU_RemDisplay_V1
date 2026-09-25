@@ -1,0 +1,8 @@
+# ESP-IDF generated build files
+build/
+sdkconfig
+sdkconfig.old
+
+# Editor and local-upload metadata
+.vscode/
+.tmp.driveupload/

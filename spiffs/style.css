@@ -1,0 +1,353 @@
+:root {
+  --panel-black: #0b0d12;
+  --panel-edge: #4f545c;
+  --panel-shine: rgba(230, 235, 242, 0.32);
+  --panel-shadow: rgba(0, 0, 0, 0.6);
+  --lcd-bg: #c8dc2a;
+  --lcd-border: #79810a;
+  --lcd-text: #1f2b1f;
+  --label: #d9dde3;
+  --muted: #aab1bb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 8px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: radial-gradient(circle at 20% 0%, #3b414b 0%, #262b32 42%, #181b21 100%);
+  color: var(--label);
+}
+
+.app-shell {
+  width: min(640px, 100%);
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.front-panel {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  padding: 28px 22px 24px;
+  border-radius: 4px;
+  border: 2px solid var(--panel-edge);
+  background:
+    linear-gradient(170deg, rgba(245, 247, 251, 0.08) 0%, rgba(10, 12, 18, 0.95) 42%, rgba(70, 76, 86, 0.45) 100%),
+    linear-gradient(180deg, #121621, #0a0c12);
+  box-shadow:
+    0 14px 28px var(--panel-shadow),
+    inset 0 1px 0 var(--panel-shine),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.6);
+}
+
+.front-panel::before {
+  content: "";
+  position: absolute;
+  left: 3%;
+  right: 3%;
+  top: 1%;
+  height: 18%;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.screw {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid #1b1f27;
+  background: radial-gradient(circle at 35% 30%, #5d636d 0%, #2a2f38 68%, #12151b 100%);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08), inset 0 0 2px rgba(0, 0, 0, 0.9);
+}
+
+.screw.tl { top: 10px; left: 10px; }
+.screw.tr { top: 10px; right: 10px; }
+.screw.bl { bottom: 10px; left: 10px; }
+.screw.br { bottom: 10px; right: 10px; }
+
+.top-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 22px;
+  align-items: center;
+}
+
+.oled-wrap {
+  display: inline-block;
+  justify-self: start;
+  padding: 3px;
+  border: 2px solid var(--lcd-border);
+  border-radius: 1px;
+  background: var(--lcd-bg);
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.35);
+}
+
+#oledCanvas {
+  display: block;
+  width: clamp(280px, 46vw, 360px);
+  height: auto;
+  max-width: 100%;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  background: var(--lcd-bg);
+  border: 0;
+  box-shadow: none;
+}
+
+.knob-cluster {
+  display: flex;
+  gap: 16px;
+  align-items: start;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+.round-btn {
+  appearance: none;
+  border: none;
+  width: 72px;
+  padding: 60px 4px 0;
+  background: transparent;
+  color: #dce1e8;
+  font-size: 11px;
+  letter-spacing: 0.3px;
+  line-height: 1.1;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+.round-btn::before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  width: 22px;
+  height: 22px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 28%, #7c818a 0%, #2f343f 40%, #141821 100%);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.18);
+}
+
+.round-btn::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: rgba(165, 175, 189, 0.35);
+  box-shadow: 0 0 2px rgba(165, 175, 189, 0.25);
+}
+
+.round-btn:hover::before {
+  filter: brightness(1.1);
+}
+
+.round-btn.is-pressed::before,
+.round-btn:active::before {
+  transform: translateX(-50%) translateY(1px) scale(0.96);
+  filter: brightness(0.84);
+}
+
+.round-btn.is-pressed::after,
+.round-btn:active::after {
+  background: rgba(190, 245, 255, 0.95);
+  box-shadow: 0 0 8px rgba(115, 235, 255, 0.95);
+}
+
+.btn-note {
+  display: block;
+  margin-top: 4px;
+  font-size: 9px;
+  letter-spacing: 0.2px;
+  color: rgba(181, 189, 201, 0.8);
+}
+
+.brand {
+  margin-top: 22px;
+  text-align: center;
+  font-size: clamp(34px, 6vw, 52px);
+  font-style: italic;
+  letter-spacing: 1px;
+  color: rgba(238, 241, 247, 0.88);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.freq {
+  margin-top: 8px;
+  font-size: 22px;
+  letter-spacing: 1px;
+  color: rgba(241, 244, 249, 0.9);
+}
+
+#oledDecoded {
+  margin-top: 8px;
+  text-align: center;
+  font-size: 11px;
+  color: rgba(196, 224, 158, 0.88);
+  min-height: 16px;
+  letter-spacing: 0.2px;
+}
+
+.mirror-actions {
+  margin-top: 4px;
+  text-align: center;
+}
+
+#mirrorReset {
+  border: 1px solid rgba(170, 177, 187, 0.42);
+  border-radius: 4px;
+  background: rgba(16, 21, 31, 0.72);
+  color: rgba(231, 236, 244, 0.88);
+  padding: 2px 4px;
+  font-size: 7px;
+  letter-spacing: 0.7px;
+  cursor: pointer;
+}
+
+#mirrorReset:hover {
+  border-color: rgba(196, 224, 158, 0.72);
+  color: rgba(220, 246, 186, 0.95);
+}
+
+#mirrorReset:disabled {
+  cursor: wait;
+  opacity: 0.6;
+}
+
+/* Keep Wi-Fi block functional, just restyled to match the device theme. */
+details#wifiSettings {
+  width: min(640px, 100%);
+  margin: 14px auto 0;
+  padding: 14px 16px;
+  border-radius: 8px;
+  border: 1px solid #3e444f;
+  background: rgba(10, 13, 19, 0.82);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
+}
+
+details#wifiSettings > summary {
+  cursor: pointer;
+  user-select: none;
+  font-weight: 700;
+  color: #e7ebf2;
+  list-style: none;
+}
+
+details#wifiSettings > summary::-webkit-details-marker {
+  display: none;
+}
+
+details#wifiSettings .panel {
+  margin-top: 10px;
+  text-align: left;
+}
+
+#wifiStatus,
+#wifiMsg {
+  font-size: 13px;
+  color: #cbd2db;
+  margin-bottom: 8px;
+  word-break: break-word;
+}
+
+#wifiForm label {
+  display: block;
+  margin: 8px 0;
+  color: #dfe4eb;
+  font-size: 14px;
+}
+
+#wifiForm label.inline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#wifiForm input {
+  width: 100%;
+  margin-top: 4px;
+  padding: 8px 10px;
+  border: 1px solid #5f6877;
+  border-radius: 4px;
+  background: #10151f;
+  color: #edf1f7;
+}
+
+#wifiForm .row {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+#wifiForm .row button {
+  flex: 1;
+  border: 1px solid #6a7280;
+  border-radius: 4px;
+  background: #1a2230;
+  color: #eef3fb;
+  padding: 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 720px) {
+  .app-shell {
+    max-width: 640px;
+  }
+
+  .front-panel {
+    padding: 16px 12px 16px;
+  }
+
+  .top-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    justify-items: center;
+  }
+
+  .oled-wrap {
+    justify-self: center;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  #oledCanvas {
+    width: min(72vw, 230px);
+    height: auto;
+  }
+
+  .knob-cluster {
+    gap: 12px;
+    justify-content: center;
+  }
+
+  .round-btn {
+    width: 70px;
+    padding-top: 54px;
+  }
+
+  .brand {
+    margin-top: 12px;
+    font-size: 34px;
+  }
+
+  .freq {
+    font-size: 18px;
+  }
+
+  details#wifiSettings {
+    width: min(640px, 100%);
+  }
+}

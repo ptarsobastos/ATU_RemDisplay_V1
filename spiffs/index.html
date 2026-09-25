@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATU Remote</title>
+    <link rel="stylesheet" href="./style.css?v=centered_640_1">
+    <link rel="icon" type="image/png" href="./favicon.png">
+</head>
+<body>
+    <div class="app-shell">
+        <div class="front-panel">
+            <div class="screw tl"></div>
+            <div class="screw tr"></div>
+            <div class="screw bl"></div>
+            <div class="screw br"></div>
+
+            <div class="top-row">
+                <div class="oled-wrap" aria-label="OLED Mirror">
+                    <canvas id="oledCanvas" width="128" height="32" aria-label="OLED 128 by 32 preview"></canvas>
+                </div>
+                <div class="knob-cluster" id="controls">
+                    <button id="btnTune" type="button" class="round-btn">TUNE</button>
+                    <button id="btnBypass" type="button" class="round-btn">BYPASS</button>
+                    <button id="btnAuto" type="button" class="round-btn">AUTO</button>
+                </div>
+            </div>
+
+            <div class="brand">ATU</div>
+            <div class="mirror-actions">
+                <button id="mirrorReset" type="button">RESET DISPLAY</button>
+            </div>
+            <div class="freq">1.8-30 MHz</div>
+            <div id="oledDecoded" aria-live="polite"></div>
+        </div>
+    </div>
+
+    <details id="wifiSettings">
+        <summary>Wi-Fi Settings</summary>
+        <div class="panel">
+            <div id="wifiStatus">Loading Wi-Fi status...</div>
+            <form id="wifiForm" autocomplete="off">
+                <label>
+                    SSID
+                    <input id="wifiSsid" name="ssid" type="text" maxlength="32" required>
+                </label>
+                <label>
+                    Password
+                    <input id="wifiPass" name="password" type="password" maxlength="64">
+                </label>
+                <label class="inline">
+                    <input id="wifiShowPass" type="checkbox">
+                    Show password
+                </label>
+                <div class="row">
+                    <button type="submit" id="wifiSave">Save & Restart</button>
+                    <button type="button" id="wifiForget">Forget Wi-Fi</button>
+                </div>
+            </form>
+            <div id="wifiMsg" aria-live="polite"></div>
+        </div>
+    </details>
+
+    <script src="./script.js?v=centered_640_1"></script>
+</body>
+</html>

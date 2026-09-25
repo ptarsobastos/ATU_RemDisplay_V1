@@ -1,0 +1,40 @@
+menu "ATU OLED Mirror"
+
+config ATU_I2C_PORT
+    int "I2C controller number"
+    range 0 1
+    default 0
+    help
+        ESP32 has two I2C controllers: 0 and 1.
+
+config ATU_I2C_SDA_GPIO
+    int "I2C SDA GPIO"
+    range 0 39
+    default 21
+    help
+        Set to the validated SDA pin used on your hardware.
+
+config ATU_I2C_SCL_GPIO
+    int "I2C SCL GPIO"
+    range 0 39
+    default 22
+    help
+        Set to the validated SCL pin used on your hardware.
+
+config ATU_I2C_SLAVE_ADDR
+    hex "Fixed SSD1306 I2C 7-bit slave address"
+    range 0x08 0x77
+    default 0x3C
+    help
+        Fixed ATU/N7DDC OLED bus address in 7-bit format.
+        PIC firmware EEPROM cell 00 uses 8-bit 0x78, equivalent to 7-bit 0x3C.
+        This project intentionally does not support fallback addresses.
+
+config ATU_I2C_SLAVE_RX_BUF_LEN
+    int "I2C slave RX buffer length (bytes)"
+    range 256 4096
+    default 1024
+    help
+        Conservative receive buffer sizing for burst capture.
+
+endmenu
