@@ -158,4 +158,4 @@ If your default branch is not `main`, use the correct branch name.
 
 ## License
 
-Choose and add a license before public release if you want reuse terms to be explicit.
+This project is licensed under the [GNU General Public License v3.0](LICENSE).
