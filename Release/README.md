@@ -6,8 +6,9 @@ standard 4 MB ESP32 DevKit without VS Code, ESP-IDF, Python, or a compiler.
 ## Install firmware
 
 1. Connect the ESP32 DevKit to the computer with a **data-capable** USB cable.
-2. Open `web-installer/index.html` from a website served over HTTPS (the
-   recommended option is GitHub Pages).
+2. On the project's GitHub Release page, click the **Installer link**. It opens
+   `https://ptarsobastos.github.io/ATU_RemDisplay_V1/Release/web-installer/`
+   in the browser. Do not download or open `web-installer/index.html` directly.
 3. In Chrome or Edge, click **Install ATU Remote Display**, select the ESP32
    serial port, and confirm the installation.
 4. When the ESP32 restarts, join its open Wi-Fi network named
@@ -35,3 +36,10 @@ shown in `hardware/ATU_RemDisplay_V1_schematic.pdf` before connecting it to the
 ATU. Do not apply a 5 V signal directly to an ESP32 GPIO.
 
 See `LICENSE` and `NOTICE` for distribution terms and third-party notices.
+
+## Publishing a release
+
+Enable GitHub Pages for this repository so that the `Release/` folder is
+available at the installer address above. Add that address as the **Installer
+link** in every GitHub Release description. This gives end users one link to
+click; they do not need to run a webserver or handle HTTPS themselves.

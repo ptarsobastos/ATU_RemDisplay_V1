@@ -11,14 +11,15 @@ No VS Code, ESP-IDF installation, compiler, or Python installation is needed.
 
 ## Browser installer
 
-The browser installer requires its `index.html`, `manifest.json`, and firmware
-files to be served by an HTTPS website. It cannot be opened directly from a
-downloaded folder using a `file:///` address, because browsers restrict access
-to USB/serial devices for local files.
+Open the **Installer link** provided on the project's GitHub Release page in
+Chrome or Microsoft Edge. It opens the one-click installer website:
 
-When this release is published with GitHub Pages, open:
+`https://ptarsobastos.github.io/ATU_RemDisplay_V1/Release/web-installer/`
 
-`https://<account>.github.io/<repository>/Release/web-installer/`
+Do not download the release folder and open `index.html`, and do not click
+`index.html` in the GitHub file browser. The installer must run from the link
+above because Chrome and Edge only allow USB/serial installation from a secure
+website.
 
 Then connect the board, press **Install ATU Remote Display**, select its serial
 port, and approve the erase/install prompts. If no port appears, use a data USB

@@ -135,8 +135,10 @@ Relevant current files:
 Users who only need to install the released firmware do not need VS Code or
 ESP-IDF. The [Release](Release/README.md) folder contains a complete browser
 installer, all required firmware images, installation instructions, checksums,
-and the hardware schematic. Publish `Release/web-installer/` through an HTTPS
-site such as GitHub Pages to make the one-click installer available.
+and the hardware schematic. End users should open the **Installer link** on
+the GitHub Release page, rather than download and open `index.html`. The link
+opens the GitHub Pages installer at
+`https://ptarsobastos.github.io/ATU_RemDisplay_V1/Release/web-installer/`.
 
 ## Validated status
 
