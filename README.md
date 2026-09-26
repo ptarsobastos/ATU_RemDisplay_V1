@@ -125,37 +125,3 @@ Relevant current files:
 ## Validated status
 
 This project version was intensively tested with the real ATU hardware under multiple operating conditions and was considered stable at consolidation time.
-
-## Publishing to GitHub
-
-To publish this project on GitHub, you need:
-
-1. a local Git repository with the final files reviewed
-2. a GitHub repository created in your account
-3. a commit history that reflects the final stable state
-4. an optional release tag for the validated version
-
-Typical workflow:
-
-```bash
-git status
-git add .
-git commit -m "Consolidate validated ATU_RemDisplay_V1 project"
-git tag atu-remdisplay-v1-stable
-git remote add origin https://github.com/YOUR_USER/YOUR_REPO.git
-git push -u origin main
-git push origin atu-remdisplay-v1-stable
-```
-
-If your default branch is not `main`, use the correct branch name.
-
-## Suggested final checks before publishing
-
-- confirm that no obsolete backup files remain
-- confirm that the exported schematic PDF is included
-- confirm that Wi-Fi behavior and AP recovery behavior match the validated hardware
-- confirm that the README reflects the actual current firmware constants and pin mapping
-
-## License
-
-This project is licensed under the [GNU General Public License v3.0](LICENSE).
