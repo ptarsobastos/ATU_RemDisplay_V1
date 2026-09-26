@@ -4,6 +4,10 @@ ESP32-based remote front panel and Wi-Fi interface for the N7DDC ATU-100.
 
 This project reproduces the main front-panel control actions of the real ATU through open-collector outputs, provides a browser-based control interface over Wi-Fi, and mirrors the ATU OLED display to the Web UI.
 
+## Web interface
+
+![ATU Remote Display Web UI](docs/images/web-atu-ui.jpeg)
+
 ## Demo video
 
 [Watch the project demo on YouTube](https://youtu.be/oE7csBFnlOc?si=iIyuglWNcs5BxYPG)
