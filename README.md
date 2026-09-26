@@ -126,6 +126,14 @@ Relevant current files:
 - ESP-IDF `v5.5.3`
 - ESP32 target
 
+## Ready-to-install firmware
+
+Users who only need to install the released firmware do not need VS Code or
+ESP-IDF. The [Release](Release/README.md) folder contains a complete browser
+installer, all required firmware images, installation instructions, checksums,
+and the hardware schematic. Publish `Release/web-installer/` through an HTTPS
+site such as GitHub Pages to make the one-click installer available.
+
 ## Validated status
 
 This project version was intensively tested with the real ATU hardware under multiple operating conditions and was considered stable at consolidation time.

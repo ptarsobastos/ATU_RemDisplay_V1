@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Install ATU Remote Display</title>
+    <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
+    <style>
+      body { max-width: 44rem; margin: 3rem auto; padding: 0 1rem; font: 16px/1.5 system-ui, sans-serif; color: #17212b; }
+      h1 { margin-bottom: .2rem; }
+      .card { margin-top: 1.5rem; padding: 1.5rem; border: 1px solid #ccd6df; border-radius: .6rem; background: #f8fafc; }
+      esp-web-install-button { display: block; margin: 1.25rem 0; }
+      code { background: #eef2f6; padding: .1rem .25rem; }
+    </style>
+  </head>
+  <body>
+    <h1>ATU Remote Display</h1>
+    <p>Install the complete, tested firmware onto a 4 MB classic ESP32 DevKit.</p>
+    <div class="card">
+      <p>Connect the ESP32 with a data USB cable, then select its serial port.</p>
+      <esp-web-install-button manifest="manifest.json"></esp-web-install-button>
+      <p><strong>Requirements:</strong> Chrome or Edge, a USB data cable, and a classic ESP32. Do not use this installer with ESP32-C3, S2, S3, or C6 boards.</p>
+      <p>If the board does not connect, hold its <code>BOOT</code> button while starting the install. Complete instructions are in <a href="../INSTALL.md">INSTALL.md</a>.</p>
+    </div>
+  </body>
+</html>

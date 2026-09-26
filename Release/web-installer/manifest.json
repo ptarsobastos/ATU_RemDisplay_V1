@@ -1,0 +1,16 @@
+{
+  "name": "ATU Remote Display",
+  "version": "1.0.0",
+  "new_install_prompt_erase": true,
+  "builds": [
+    {
+      "chipFamily": "ESP32",
+      "parts": [
+        { "path": "../firmware/bootloader.bin", "offset": 4096 },
+        { "path": "../firmware/partition-table.bin", "offset": 32768 },
+        { "path": "../firmware/ATU_RemDisplay_V1.bin", "offset": 65536 },
+        { "path": "../firmware/spiffs.bin", "offset": 1114112 }
+      ]
+    }
+  ]
+}
