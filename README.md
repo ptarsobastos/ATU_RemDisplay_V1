@@ -137,8 +137,9 @@ ESP-IDF. The [Release](Release/README.md) folder contains a complete browser
 installer, all required firmware images, installation instructions, checksums,
 and the hardware schematic. End users should open the **Installer link** on
 the GitHub Release page, rather than download and open `index.html`. The link
-opens the GitHub Pages installer at
-`https://ptarsobastos.github.io/ATU_RemDisplay_V1/Release/web-installer/`.
+opens the GitHub Pages installer:
+
+[Install ATU Remote Display](https://ptarsobastos.github.io/ATU_RemDisplay_V1/Release/web-installer/)
 
 ## Validated status
 

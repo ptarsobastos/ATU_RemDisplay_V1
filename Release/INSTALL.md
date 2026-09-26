@@ -14,7 +14,7 @@ No VS Code, ESP-IDF installation, compiler, or Python installation is needed.
 Open the **Installer link** provided on the project's GitHub Release page in
 Chrome or Microsoft Edge. It opens the one-click installer website:
 
-`https://ptarsobastos.github.io/ATU_RemDisplay_V1/Release/web-installer/`
+[Install ATU Remote Display](https://ptarsobastos.github.io/ATU_RemDisplay_V1/Release/web-installer/)
 
 Do not download the release folder and open `index.html`, and do not click
 `index.html` in the GitHub file browser. The installer must run from the link
