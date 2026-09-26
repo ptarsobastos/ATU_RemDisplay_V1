@@ -9,8 +9,9 @@ standard 4 MB ESP32 DevKit without VS Code, ESP-IDF, Python, or a compiler.
 2. On the project's GitHub Release page, click the **Installer link**. It opens
    [Install ATU Remote Display](https://ptarsobastos.github.io/ATU_RemDisplay_V1/Release/web-installer/)
    in the browser. Do not download or open `web-installer/index.html` directly.
-3. In Chrome or Edge, click **Install ATU Remote Display**, select the ESP32
-   serial port, and confirm the installation.
+3. In a current desktop browser with Web Serial support, such as Chrome, Edge,
+   or Firefox, click **Install ATU Remote Display**, select the ESP32 serial
+   port, and confirm the installation.
 4. When the ESP32 restarts, join its open Wi-Fi network named
    `ATU1000-SETUP-XXXXXX`, then follow the Wi-Fi setup instructions in
    [INSTALL.md](INSTALL.md). The final six characters are unique to the ESP32.

@@ -4,22 +4,23 @@
 
 - A classic ESP32 DevKit with **4 MB flash**.
 - A USB cable that carries data (some charging cables do not).
-- Chrome or Microsoft Edge on Windows, macOS, Linux, or ChromeOS.
+- A current desktop browser with Web Serial support, such as Chrome, Edge, or
+  Firefox, on Windows, macOS, Linux, or ChromeOS.
 - The ATU interface hardware built according to the supplied schematic.
 
 No VS Code, ESP-IDF installation, compiler, or Python installation is needed.
 
 ## Browser installer
 
-Open the **Installer link** provided on the project's GitHub Release page in
-Chrome or Microsoft Edge. It opens the one-click installer website:
+Open the **Installer link** provided on the project's GitHub Release page in a
+current desktop browser with Web Serial support, such as Chrome, Edge, or
+Firefox. It opens the one-click installer website:
 
 [Install ATU Remote Display](https://ptarsobastos.github.io/ATU_RemDisplay_V1/Release/web-installer/)
 
 Do not download the release folder and open `index.html`, and do not click
 `index.html` in the GitHub file browser. The installer must run from the link
-above because Chrome and Edge only allow USB/serial installation from a secure
-website.
+above because browsers restrict USB/serial installation to secure websites.
 
 Then connect the board, press **Install ATU Remote Display**, select its serial
 port, and approve the erase/install prompts. If no port appears, use a data USB
