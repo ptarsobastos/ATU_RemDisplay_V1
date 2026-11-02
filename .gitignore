@@ -1,5 +1,6 @@
 # ESP-IDF generated build files
 build/
+build-*/
 sdkconfig
 sdkconfig.old
 

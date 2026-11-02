@@ -17,6 +17,11 @@ static const char *TAG = "ATU_OLED_MIRROR";
 #define ATU_OLED_I2C_SCL_GPIO            22
 #define ATU_OLED_I2C_ADDR                0x3C  // PIC/N7DDC EEPROM value 8-bit 0x78
 #define ATU_OLED_I2C_RX_BUF_LEN          1024
+#define ATU_OLED_I2C_FILTER_CYCLES       7
+
+#if ATU_OLED_I2C_FILTER_CYCLES > 7
+#error "ATU_OLED_I2C_FILTER_CYCLES must be between 0 and 7"
+#endif
 
 #define ATU_OLED_N7DDC_EEPROM_TYPE_NORMAL    2
 #define ATU_OLED_N7DDC_EEPROM_TYPE_INVERTED  3
@@ -118,13 +123,31 @@ static esp_err_t atu_oled_i2c_slave_init(void)
     };
 
     ESP_RETURN_ON_ERROR(i2c_param_config(ATU_OLED_I2C_PORT, &cfg), TAG, "i2c_param_config failed");
-    return i2c_driver_install(
-        ATU_OLED_I2C_PORT,
-        I2C_MODE_SLAVE,
-        ATU_OLED_I2C_RX_BUF_LEN,
-        0,
-        0
+    ESP_RETURN_ON_ERROR(
+        i2c_driver_install(
+            ATU_OLED_I2C_PORT,
+            I2C_MODE_SLAVE,
+            ATU_OLED_I2C_RX_BUF_LEN,
+            0,
+            0
+        ),
+        TAG,
+        "i2c_driver_install failed"
     );
+
+#if ATU_OLED_I2C_FILTER_CYCLES > 0
+    ESP_RETURN_ON_ERROR(
+        i2c_filter_enable(ATU_OLED_I2C_PORT, ATU_OLED_I2C_FILTER_CYCLES),
+        TAG,
+        "i2c_filter_enable failed"
+    );
+    ESP_LOGI(TAG, "I2C hardware glitch filter enabled (%d APB cycles)",
+             ATU_OLED_I2C_FILTER_CYCLES);
+#else
+    ESP_LOGI(TAG, "I2C hardware glitch filter disabled");
+#endif
+
+    return ESP_OK;
 }
 
 static bool is_page_cmd(uint8_t b)
