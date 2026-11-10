@@ -112,6 +112,10 @@ The complete electrical schematic is available as a PDF:
 
 - [ATU_RemDisplay_V1 electrical schematic](HW_Schematic/ATU_RemDisplay_V1_schematic.pdf)
 
+Hardware V2 adds four capacitors (C10-C13) to improve immunity to HF electromagnetic interference:
+
+- [ATU_RemDisplay_V2 electrical schematic](HW_Schematic/ATU_RemDisplay_V2_schematic.pdf)
+
 KiCad source files are intentionally not distributed in this repository.
 
 ## Software structure
